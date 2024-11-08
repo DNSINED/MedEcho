@@ -1,0 +1,26 @@
+muscle_wasting
+blackheads
+spotting_ urination
+itching
+indigestion
+nausea
+congestion
+bladder_discomfort
+cough
+painful_walking
+palpitations
+hip_joint_pain
+back_pain
+dark_urine
+bloody_stool
+fast_heart_rate
+abdominal_pain
+constipation
+vomiting
+sunken_eyes
+breathlessness
+slurred_speech
+nodal_skin_eruptions
+pus_filled_pimples
+restlessness
+high_fever

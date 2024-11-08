@@ -1,0 +1,191 @@
+{% load static %} <!-- Add this line at the very top -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioMed AI</title>
+    <link rel="stylesheet" href="{% static 'css/styleindex.css' %}">
+    <script src="{% static 'js/script_index.js' %}" defer></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to MedEcho</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submit-button">Login</button>
+            </form>
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <img class="logo-img" width="24" height="24" src="{% static 'img/medical-pulse-svgrepo-com.svg' %}">
+                    
+                    
+   
+                    </img>
+                    MedEcho
+                </a>
+            </div>
+            <div class="nav-center">
+                
+            </div>
+            <div class="nav-right">
+                <button class="icon-button" aria-label="Sign Up">
+                    <img src="{% static 'img/user.svg' %}" class="user-img" width="24" height="24" viewBox="0 0 24 24" fill="none" ></img>
+                </button>
+                
+                
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="gradient-outer-container">
+                <div class="gradient-inner-container">
+                    <div class="gradient"></div>
+                </div>
+            </div>
+            
+            <div class="content-wrapper">
+                
+
+                <div class="hero-content">
+                    <h1>
+                        Revolutionizing medical <span class="highlight"> diagnosting</span>
+                        <br>with AI.
+                    </h1>
+                    <p class="subtitle">
+                        Providing our patients with fast and accurate health assessment,delivering early diagnosis and personalized recommendations.
+                    </p>
+                </div>
+
+                
+                <a href="{% url 'ai_search' %}" class="cta-button">Get started</a>
+
+            </div>
+
+            <div class="top-bar">
+                <div class="top-left">
+                    
+                    
+                </div>
+                
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About MedEcho</h2>
+                <p style="display:flex;justify-content: center;">BioMed is the platform which rethinks medical diagnosting offering a user-friendly solution to guide you through your health journey.</p>
+                <div class="about-grid">
+                    <div class="about-item">
+                        <h3>Our Mission</h3>
+                        <p>Empowering patients and providing relentless support on every step of the way with the power of artificial intelligence.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>Our Vision</h3>
+                        <p>We aspire to bridge the gap between patients and healthcare providers,enabling active health management and informed decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg viewBox="0 0 24 24" class="service-icon" width="48" height="48">
+                            <circle cx="12" cy="12" r="10" fill="#064789"/>
+                            <path d="M12 16V8M8 12h8" stroke="white" stroke-width="2"/>
+                        </svg>
+                        <h3>AI Diagnostics</h3>
+                        <p>Leverage our advanced AI algorithms for rapid and accurate medical diagnostics.</p>
+                    </div>
+                    <div class="service-card">
+                        <svg viewBox="0 0 24 24" class="service-icon" width="48" height="48">
+                            <circle cx="12" cy="12" r="10" fill="#064789"/>
+                            <path d="M12 16V8M8 12h8" stroke="white" stroke-width="2"/>
+                        </svg>
+                        <h3>Early Warning System
+                        </h3>
+                        <p>Detect early warning signs of critical conditions</p>
+                    </div>
+                    <div class="service-card">
+                        <svg viewBox="0 0 24 24" class="service-icon" width="48" height="48">
+                            <circle cx="12" cy="12" r="10" fill="#064789"/>
+                            <path d="M12 8v8M8 12h8" stroke="white" stroke-width="2"/>
+                        </svg>
+                        <h3>Personalized Treatment</h3>
+                        <p>Receive tailored treatment plans based on AI-driven insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img class="logo-img" width="24" height="24" src="{% static 'icons/medical-pulse-svgrepo-com.svg' %}">
+                    <img src="{% static 'img/user.svg' %}" class="user-img" width="24" height="24">
+                    
+
+                    <span>MedEcho</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://web.facebook.com/profile.php?id=61568512046576&_rdc=1&_rdr#" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#064789"   class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a  href="https://www.instagram.com/_medecho_/" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064789" class="lucide lucide-instagram">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke="#064789" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="3.5" stroke="#064789" stroke-width="2"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="#064789"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://x.com/_medecho" target="_blank" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#064789"  class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 MedEcho. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>
