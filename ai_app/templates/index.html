@@ -1,5 +1,4 @@
-{% load static %} <!-- Add this line at the very top -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioMed AI</title>
     <link rel="stylesheet" href="{% static 'css/styleindex.css' %}">
-    <script src="{% static 'js/script_index.js' %}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="loginModal" class="modal">
@@ -41,8 +43,7 @@
                 <a href="#" class="logo">
                     <img class="logo-img" width="24" height="24" src="{% static 'img/medical-pulse-svgrepo-com.svg' %}">
                     
-                    
-   
+                        
                     </img>
                     MedEcho
                 </a>
@@ -83,7 +84,6 @@
 
                 
                 <a href="{% url 'ai_search' %}" class="cta-button">Get started</a>
-
             </div>
 
             <div class="top-bar">
@@ -95,11 +95,10 @@
                 </div>
             </div>
         </section>
-
         <section id="about" class="about">
             <div class="container">
-                <h2>About MedEcho</h2>
-                <p style="display:flex;justify-content: center;">BioMed is the platform which rethinks medical diagnosting offering a user-friendly solution to guide you through your health journey.</p>
+                <h2 class="section-title">About MedEcho</h2>
+                <p class="about-description">BioMed is the platform that rethinks medical diagnostics, offering a user-friendly solution to guide you through your health journey. MedEcho is more than a diagnostic tool; it’s a virtual healthcare assistant. Whether it's helping doctors streamline their workflow or enabling patients to make informed decisions, MedEcho aims to enhance the quality and accessibility of medical care.</p>
                 <div class="about-grid">
                     <div class="about-item">
                         <h3>Our Mission</h3>
@@ -107,38 +106,33 @@
                     </div>
                     <div class="about-item">
                         <h3>Our Vision</h3>
-                        <p>We aspire to bridge the gap between patients and healthcare providers,enabling active health management and informed decision-making.</p>
+                        <p>We aspire to bridge the gap between patients and healthcare providers, enabling active health management and informed decision-making.</p>
                     </div>
+                </div>
+                <div class="button">
+                    <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
         </section>
+        
 
         <section id="services" class="services">
             <div class="container">
                 <h2>Our Services</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <svg viewBox="0 0 24 24" class="service-icon" width="48" height="48">
-                            <circle cx="12" cy="12" r="10" fill="#064789"/>
-                            <path d="M12 16V8M8 12h8" stroke="white" stroke-width="2"/>
-                        </svg>
+                        
                         <h3>AI Diagnostics</h3>
                         <p>Leverage our advanced AI algorithms for rapid and accurate medical diagnostics.</p>
                     </div>
                     <div class="service-card">
-                        <svg viewBox="0 0 24 24" class="service-icon" width="48" height="48">
-                            <circle cx="12" cy="12" r="10" fill="#064789"/>
-                            <path d="M12 16V8M8 12h8" stroke="white" stroke-width="2"/>
-                        </svg>
+                        
                         <h3>Early Warning System
                         </h3>
                         <p>Detect early warning signs of critical conditions</p>
                     </div>
                     <div class="service-card">
-                        <svg viewBox="0 0 24 24" class="service-icon" width="48" height="48">
-                            <circle cx="12" cy="12" r="10" fill="#064789"/>
-                            <path d="M12 8v8M8 12h8" stroke="white" stroke-width="2"/>
-                        </svg>
+                        
                         <h3>Personalized Treatment</h3>
                         <p>Receive tailored treatment plans based on AI-driven insights.</p>
                     </div>
@@ -155,7 +149,6 @@
                     <img class="logo-img" width="24" height="24" src="{% static 'icons/medical-pulse-svgrepo-com.svg' %}">
                     <img src="{% static 'img/user.svg' %}" class="user-img" width="24" height="24">
                     
-
                     <span>MedEcho</span>
                 </div>
                 <div class="footer-links">
@@ -185,7 +178,7 @@
             <p class="copyright">&copy; 2024 MedEcho. All rights reserved.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="{% static 'js/script_index.js' %}"></script>
     
 </body>
 </html>
