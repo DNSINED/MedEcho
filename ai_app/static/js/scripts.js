@@ -6,146 +6,143 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownContent = document.getElementById('dropdown-content');
     const selectedSymptomsContainer = document.getElementById('selected-symptoms');
     const sendRequestBtn = document.getElementById('send-request');
+    const sympSection = document.getElementById('symp');
+    let resultContainer;
 
     const grammaticalSymptoms = [
-        "High Fever",
-        "Fast Heart Rate",
-        "Malaise",
-        "Runny Nose",
-        "Palpitations",
+        "Abdominal Pain",
         "Abnormal Menstruation",
-        "Coma",
-        "Receiving Blood Transfusion",
-        "Phlegm",
-        "Pain Behind the Eyes",
-        "Mild Fever",
-        "Brittle Nails",
-        "Muscle Pain",
-        "Increased Appetite",
-        "Chills",
-        "Obesity",
-        "Distention of Abdomen",
-        "Unsteadiness",
-        "Knee Pain",
-        "Internal Itching",
-        "Weight Loss",
-        "Bladder Discomfort",
-        "Skin Peeling",
-        "Lack of Concentration",
-        "Red Sore Around Nose",
-        "Movement Stiffness",
-        "Irritability",
-        "Pain in Anal Region",
-        "Mucoid Sputum",
         "Altered Sensorium",
+        "Back Pain",
+        "Blackheads",
+        "Bladder Discomfort",
+        "Bloody Stool",
+        "Brittle Nails",
+        "Chest Pain",
+        "Chills",
+        "Coma",
+        "Congestion",
+        "Constipation",
+        "Continuous Feeling of Urine",
+        "Cough",
+        "Dark Urine",
         "Diarrhea",
         "Dizziness",
-        "Chest Pain",
-        "Stomach Pain",
+        "Distention of Abdomen",
         "Family History",
-        "Dark Urine",
-        "Spotting on Urination",
-        "Dischromic Patches",
-        "Muscle Wasting",
-        "Blackheads",
-        "Itching",
-        "Indigestion",
-        "Nausea",
-        "Congestion",
-        "Cough",
-        "Painful Walking",
-        "Hip Joint Pain",
-        "Back Pain",
-        "Bloody Stool",
-        "Abdominal Pain",
-        "Constipation",
-        "Vomiting",
-        "Sunken Eyes",
-        "Breathlessness",
-        "Slurred Speech",
-        "Nodal Skin Eruptions",
-        "Pus-filled Pimples",
-        "Restlessness",
         "Fatigue",
-        "Yellowing of Eyes",
-        "Joint Pain",
         "Headache",
-        "Continuous Feeling of Urine",
+        "High Fever",
+        "Hip Joint Pain",
+        "Increased Appetite",
+        "Indigestion",
+        "Internal Itching",
+        "Irritability",
+        "Itching",
+        "Joint Pain",
+        "Knee Pain",
+        "Lack of Concentration",
         "Loss of Balance",
+        "Malaise",
+        "Mild Fever",
+        "Movement Stiffness",
+        "Mucoid Sputum",
+        "Muscle Pain",
+        "Muscle Wasting",
+        "Nausea",
+        "Nodal Skin Eruptions",
+        "Obesity",
+        "Pain Behind the Eyes",
+        "Pain in Anal Region",
+        "Painful Walking",
+        "Palpitations",
         "Passage of Gases",
+        "Phlegm",
+        "Pus-filled Pimples",
+        "Receiving Blood Transfusion",
+        "Red Sore Around Nose",
+        "Red Spots Over Body",
+        "Restlessness",
+        "Runny Nose",
+        "Skin Peeling",
+        "Slurred Speech",
+        "Spotting on Urination",
+        "Stomach Pain",
+        "Sunken Eyes",
         "Sweating",
-        "Red Spots Over Body"
+        "Unsteadiness",
+        "Vomiting",
+        "Weight Loss",
+        "Yellowing of Eyes"
     ];
-
+    
     const commonSymptoms = [
-        "high_fever",
-        "fast_heart_rate",
-        "malaise",
-        "runny_nose",
-        "palpitations",
+        "abdominal_pain",
         "abnormal_menstruation",
-        "coma",
-        "receiving_blood_transfusion",
-        "phlegm",
-        "pain_behind_the_eyes",
-        "mild_fever",
-        "brittle_nails",
-        "muscle_pain",
-        "increased_appetite",
-        "chills",
-        "obesity",
-        "distention_of_abdomen",
-        "unsteadiness",
-        "knee_pain",
-        "internal_itching",
-        "weight_loss",
-        "bladder_discomfort",
-        "skin_peeling",
-        "lack_of_concentration",
-        "red_sore_around_nose",
-        "movement_stiffness",
-        "irritability",
-        "pain_in_anal_region",
-        "mucoid_sputum",
         "altered_sensorium",
+        "back_pain",
+        "blackheads",
+        "bladder_discomfort",
+        "bloody_stool",
+        "brittle_nails",
+        "chest_pain",
+        "chills",
+        "coma",
+        "congestion",
+        "constipation",
+        "continuous_feel_of_urine",
+        "cough",
+        "dark_urine",
         "diarrhoea",
         "dizziness",
-        "chest_pain",
-        "stomach_pain",
+        "distention_of_abdomen",
         "family_history",
-        "dark_urine",
-        "spotting_urination",
-        "dischromic_patches",
-        "muscle_wasting",
-        "blackheads",
-        "itching",
-        "indigestion",
-        "nausea",
-        "congestion",
-        "cough",
-        "painful_walking",
-        "hip_joint_pain",
-        "back_pain",
-        "bloody_stool",
-        "abdominal_pain",
-        "constipation",
-        "vomiting",
-        "sunken_eyes",
-        "breathlessness",
-        "slurred_speech",
-        "nodal_skin_eruptions",
-        "pus_filled_pimples",
-        "restlessness",
         "fatigue",
-        "yellowing_of_eyes",
-        "joint_pain",
         "headache",
-        "continuous_feel_of_urine",
+        "high_fever",
+        "hip_joint_pain",
+        "increased_appetite",
+        "indigestion",
+        "internal_itching",
+        "irritability",
+        "itching",
+        "joint_pain",
+        "knee_pain",
+        "lack_of_concentration",
         "loss_of_balance",
+        "malaise",
+        "mild_fever",
+        "movement_stiffness",
+        "mucoid_sputum",
+        "muscle_pain",
+        "muscle_wasting",
+        "nausea",
+        "nodal_skin_eruptions",
+        "obesity",
+        "pain_behind_the_eyes",
+        "pain_in_anal_region",
+        "painful_walking",
+        "palpitations",
         "passage_of_gases",
+        "phlegm",
+        "pus_filled_pimples",
+        "receiving_blood_transfusion",
+        "red_sore_around_nose",
+        "red_spots_over_body",
+        "restlessness",
+        "runny_nose",
+        "skin_peeling",
+        "slurred_speech",
+        "spotting_urination",
+        "stomach_pain",
+        "sunken_eyes",
         "sweating",
-        "red_spots_over_body"
+        "unsteadiness",
+        "vomiting",
+        "weight_loss",
+        "yellowing_of_eyes"
     ];
+    
     const rndforest_symptoms = [
         "muscle_pain",
         "itching",
@@ -260,16 +257,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function toggleDropdown() {
-        dropdownContent.classList.toggle('hidden');
-        if (!dropdownContent.classList.contains('hidden')) {
+        if (dropdownContent.classList.contains('hidden')) {
+            dropdownContent.classList.remove('hidden')
             dropdownContent.innerHTML = ''; 
             commonSymptoms.forEach(symptom => {
-                const div = document.createElement('div');
-                div.classList.add('dropdown-item');
-                div.textContent = symptom;
-                div.onclick = () => addSymptom(symptom);
-                dropdownContent.appendChild(div);
+                if(!symptoms.includes(symptom)){
+                    const div = document.createElement('div');
+                    div.classList.add('dropdown-item');
+                    div.textContent = grammaticalSymptoms[commonSymptoms.indexOf(symptom)];
+                    div.onclick = () => {
+                        addSymptom(symptom);
+                        div.style.display = "none";
+                        if(symptoms.length == commonSymptoms.length) toggleDropdown();
+                    }
+                    dropdownContent.appendChild(div);
+                }
             });
+        } else {
+            dropdownContent.classList.add('hidden')
         }
     }
 
@@ -278,7 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
             symptoms.push(symptom);
             updateSelectedSymptoms();
         }
-        dropdownContent.classList.add('hidden');
         symptomInput.value = '';
     }
 
@@ -287,9 +291,24 @@ document.addEventListener('DOMContentLoaded', () => {
         symptoms.forEach(symptom => {
             const div = document.createElement('div');
             div.className = 'selected-item';
-            div.textContent = symptom;
+            div.textContent = grammaticalSymptoms[commonSymptoms.indexOf(symptom)];
+            div.onclick = () => {
+                symptoms.splice(symptoms.indexOf(symptom), 1);
+                updateSelectedSymptoms();
+            }
             selectedSymptomsContainer.appendChild(div);
         });
+        if(symptoms.length > 2){
+            const clearAll = document.createElement('div');
+            clearAll.classList.add('selected-item');
+            clearAll.id = "clear-all";
+            clearAll.textContent = "clear";
+            clearAll.onclick = () => {
+                symptoms = [];
+                selectedSymptomsContainer.innerHTML = '';
+            }
+            selectedSymptomsContainer.appendChild(clearAll);
+        }
     }
 
     symptomInput.addEventListener('focus', toggleDropdown);
@@ -338,8 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error('Failed to send data to backend');
 
             const result = await response.json();
-            console.log(result);  // Log the response from backend or handle accordingly
-
+            showResult(result);
         } catch (error) {
             alert('There was an error processing your request.');
             console.error('Error:', error);
@@ -352,4 +370,90 @@ document.addEventListener('DOMContentLoaded', () => {
             addSymptom(symptomInput.value);
         }
     });
+
+    function showResult(result) {
+        if(resultContainer != null) sympSection.removeChild(resultContainer);
+        resultContainer = document.createElement("div");
+        resultContainer.className = "result-container";
+    
+        const sortedResults = Object.entries(result)
+        .map(([model, data]) => ({
+            model,
+            prediction: data.Predictions[0],
+            confidence: data.Confidence[0]
+        }))
+        .sort((a, b) => b.confidence - a.confidence); // Sort by confidence descending
+
+        // Display each model's data after sorting
+        sortedResults.forEach(({ model, prediction, confidence }) => {
+            const modelContainer = document.createElement("div");
+            modelContainer.className = "model-container";
+
+            // Model title
+            const title = document.createElement("h3");
+            title.className = "model-title";
+            title.textContent = `${prediction}`;
+            modelContainer.appendChild(title);
+
+            const confidenceText = document.createElement("p");
+            confidenceText.className = "confidence";
+            confidenceText.textContent = `Accuracy: ${confidence.toFixed(2)}%`;
+            modelContainer.appendChild(confidenceText);
+
+            resultContainer.appendChild(modelContainer);
+        }); 
+    
+        // Append the container to the document body or a specific element
+        sympSection.appendChild(resultContainer);
+    }
+
+    function filterSymptoms() {
+        const query = symptomInput.value.toLowerCase();
+        dropdownContent.innerHTML = '';
+        
+        commonSymptoms.forEach((symptom, index) => {
+            const displayName = grammaticalSymptoms[index];
+            if (displayName.toLowerCase().includes(query) && !symptoms.includes(symptom)) {
+                const div = document.createElement('div');
+                div.classList.add('dropdown-item');
+                div.textContent = displayName;
+                div.onclick = () => {
+                    addSymptom(symptom);
+                    div.style.display = "none";
+                };
+                dropdownContent.appendChild(div);
+            }
+        });
+        
+        // Показать выпадающий список, если есть совпадения
+        if (dropdownContent.children.length > 0) {
+            dropdownContent.classList.remove('hidden');
+        } else {
+            dropdownContent.classList.add('hidden');
+        }
+    }
+
+    symptomInput.addEventListener('input', filterSymptoms);
+
+symptomInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        
+        // Если есть отфильтрованные симптомы, добавить первый из них
+        const firstVisibleSymptom = dropdownContent.querySelector('.dropdown-item');
+        if (firstVisibleSymptom) {
+            const symptomText = firstVisibleSymptom.textContent;
+            const symptomIndex = grammaticalSymptoms.indexOf(symptomText);
+            if (symptomIndex !== -1) {
+                const symptomCode = commonSymptoms[symptomIndex];
+                addSymptom(symptomCode);
+            }
+        }
+        
+        // Очистить поле ввода и обновить фильтр
+        symptomInput.value = '';
+        filterSymptoms();
+    }
+});
+
 });
