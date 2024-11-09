@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body class="light-mode">
-    <div class="min-h-screen">
-
         <header class="shadow-lg">
             <div class="container max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-                <div>
+                <div id="tt">
                     <div id="name">
-                        <img src="{% static 'img/activity.svg' %}">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/activity.svg' %}"></a>
                         <h1 class="text-4xl font-bold">AI MedEcho</h1>
                     </div>
-                    <p class="mt-2">Harness the power of AI for preliminary medical insights</p>
+                    <p class="power">Harness the power of AI for preliminary medical insights</p>
                 </div>
                 <button id="theme-toggle" data-sun-icon="{% static 'img/sun.svg' %}" data-moon-icon="{% static 'img/moon.svg' %}">
                     <img id="sun" src="{% static 'img/sun.svg' %}" style="display: none;">
                     <img id="moon" src="{% static 'img/moon.svg' %}">
                 </button>
-
+                <div class="nav-right">
+                    <button id="login" class="icon-button" aria-label="Sign Up">
+                        <img id="user" src="{% static 'img/user.svg' %}" width="24" height="24">
+                        <img id="userwhite" src="{% static 'img/userwhite.svg' %}" width="24" height="24" style="display: none;">
+                    </button>
+                </div>
             </div>
         </header>
 
