@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const sunIcon = document.getElementById('sun');
     const moonIcon = document.getElementById('moon');
+    const userIcon = document.getElementById('user');
+    const userWhite = document.getElementById('userwhite');
     const symptomInput = document.getElementById('symptom-input');
     const dropdownContent = document.getElementById('dropdown-content');
     const selectedSymptomsContainer = document.getElementById('selected-symptoms');
@@ -250,9 +252,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.body.classList.contains('dark-mode')) {
             sunIcon.style.display = 'inline';
             moonIcon.style.display = 'none';
+            userWhite.style.display = 'inline';
+            userIcon.style.display = 'none';
         } else {
             sunIcon.style.display = 'none';
             moonIcon.style.display = 'inline';
+            userWhite.style.display = 'none';
+            userIcon.style.display = 'inline';
         }
     });
 
