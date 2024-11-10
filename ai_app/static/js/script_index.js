@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) { // Adjust scroll threshold as needed
-            navbar.classList.add('scrolled'); // Adds background color on scroll
+        if (window.scrollY > 50) { 
+            navbar.classList.add('scrolled'); 
         } else {
-            navbar.classList.remove('scrolled'); // Removes background color
+            navbar.classList.remove('scrolled'); 
         }
     });
 });
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Here you would typically send the login data to your server
         console.log('Login submitted');
         modal.style.display = 'none';
     });

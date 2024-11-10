@@ -388,14 +388,11 @@ document.addEventListener('DOMContentLoaded', () => {
             prediction: data.Predictions[0],
             confidence: data.Confidence[0]
         }))
-        .sort((a, b) => b.confidence - a.confidence); // Sort by confidence descending
-
-        // Display each model's data after sorting
+        .sort((a, b) => b.confidence - a.confidence); 
         sortedResults.forEach(({ model, prediction, confidence }) => {
             const modelContainer = document.createElement("div");
             modelContainer.className = "model-container";
 
-            // Model title
             const title = document.createElement("h3");
             title.className = "model-title";
             title.textContent = `${prediction}`;
@@ -409,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultContainer.appendChild(modelContainer);
         }); 
     
-        // Append the container to the document body or a specific element
+        
         sympSection.appendChild(resultContainer);
     }
 
@@ -431,7 +428,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Показать выпадающий список, если есть совпадения
         if (dropdownContent.children.length > 0) {
             dropdownContent.classList.remove('hidden');
         } else {
@@ -445,7 +441,6 @@ symptomInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
         
-        // Если есть отфильтрованные симптомы, добавить первый из них
         const firstVisibleSymptom = dropdownContent.querySelector('.dropdown-item');
         if (firstVisibleSymptom) {
             const symptomText = firstVisibleSymptom.textContent;
@@ -456,7 +451,6 @@ symptomInput.addEventListener('keypress', (e) => {
             }
         }
         
-        // Очистить поле ввода и обновить фильтр
         symptomInput.value = '';
         filterSymptoms();
     }
